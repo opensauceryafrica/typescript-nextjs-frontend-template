@@ -9,7 +9,7 @@ async function getData() {
       graphqlQuery
       `,
     }),
-    next: { revalidate: 10 },
+    next: { revalidate: 10 }, // set revalidate: 0 to complete opt out of nextjs request data caching especially when dealing with services with frequent data changes
   }).then((res) => res.json());
   return response.data;
 }
